@@ -1,0 +1,230 @@
+.services {
+  display: flex;
+  flex-direction: column;
+  // position: relative;
+  width: 100%;
+
+  .service {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 15px;
+    margin: 15px 25px;
+    font-family: 'Spartan';
+    font-size: 14px;
+    text-decoration: none;
+    border-radius: 5px;
+    border: 2px solid #97bf11;
+    color: #000000;
+  }
+
+  .service-image {
+    max-height: 100px;
+    margin-right: 10px;
+  }
+
+  .service-name {
+    font-weight: 800;
+    font-size: 15px;
+    margin-bottom: 10px;
+    margin-top: 15px;
+  }
+
+  .service-category {
+    margin: 0 0 5px 15px;
+    font-weight: 600;
+  }
+
+  .service-description {
+    margin-top: 20px;
+    line-height: 17px;
+  }
+
+  .service-link-wrapper {
+    position: relative;
+    // height: 100px;
+    width: 100%;
+  }
+
+  .service-link-inner-wrapper {
+    // position: absolute;
+    width: 100%;
+    // height: 100px;
+    transition: transform 1s cubic-bezier(.02, .01, .47, 1) 0s, height 1s cubic-bezier(.02, .01, .47, 1) 0s;
+    will-change: transform, height;
+  }
+
+  .full-screen {
+    background-color: #ffffff;
+    z-index: 999;
+
+    .booking-form {
+      transition: height 0 0.2s;
+
+      .input-wrapper {
+        width: 200px;
+        margin: 5px;
+      }
+      
+      input {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        height: 35px;
+        width: 200px;
+        padding-left: 10px;
+        font-family: 'Spartan';
+        font-size: 16px;
+        font-weight: 400;
+        text-transform: uppercase;
+        border: 1px solid #97bf11;
+        border-radius: 2px;
+        outline: none;
+      }
+
+      .select-wrapper {
+        position: relative;
+        // max-width: 285px;
+        // width: 100%;
+        // margin-right: 30px;
+      }
+
+      select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        width: 200px;
+        height: 35px;
+        padding-left: 10px;
+        margin: 5px;
+        font-family: 'Spartan';
+        font-size: 16px;
+        border-radius: 2px;
+        border: 1px solid #97bf11;
+        background-color: #ffffff;
+        outline: none;
+
+        &:hover:enabled {
+          cursor: pointer;
+        }
+      }
+
+      .arrow-down {
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        width: 0; 
+        height: 0; 
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-top: 10px solid #97bf11;
+        pointer-events: none;
+        transform: translateY(-50%);
+      }
+
+      .address-arrow {
+        right: 10px;
+      }
+
+      .booking-price {
+        display: flex;
+        padding: 0 15px;
+        margin-left: 25px;
+        
+        .price-label {
+          color: #97bf11;
+        }
+
+        .price-value {
+          padding-top: 5px;
+          font-family: 'Spartan';
+          font-size: 30px;
+          line-height: 30px;
+        }
+      }
+
+      button {
+        align-self: flex-end;
+        width: 100px;
+        height: 35px;
+        padding-top: 3px;
+        margin-left: 20px;
+        font-family: 'Spartan';
+        font-size: 10px;
+        font-weight: 700;
+        line-height: 14px;
+        text-transform: uppercase;
+        text-align: center;
+        border: none;
+        background-color: #97bf11;
+        color: #ffffff;
+        outline: none;
+        white-space: nowrap;
+  
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  
+  .booking-form {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 0;
+    margin: 0 20px 0 20px;
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity 0.5s ease 0.2s;
+    will-change: opacity;
+  }
+
+  .booking-confirmed {
+    margin-left: 35px;
+    margin-top: 20px;
+    font-family: 'Spartan';
+    font-size: 20px;
+    font-weight: 500;
+    color: red;
+  }
+
+  .fade-in {
+    height: auto;
+    opacity: 1;
+    transition: opacity 0.5s ease 0.2s;
+  }
+
+  .close-service {
+    width: 100px;
+    height: 0;
+    padding: 0;
+    margin-left: 25px;
+    margin-top: 20px;
+    font-family: 'Spartan';
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 14px;
+    text-transform: uppercase;
+    text-align: center;
+    border: none;
+    background-color: #12bbb5;
+    color: #ffffff;
+    outline: none;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.5s ease 0.2s;
+    will-change: opacity;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .close-service.fade-in {
+    height: 35px;
+    opacity: 1;
+  }
+}
+
+
+
+

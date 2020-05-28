@@ -1,0 +1,121 @@
+.signup-form-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+}
+
+.signup-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  padding: 10px;
+}
+
+.signup-form ::-webkit-input-placeholder {
+  color: #97bf11;
+}
+
+.signup-form :-ms-input-placeholder {
+  color: #97bf11;
+}
+
+.signup-form ::-ms-input-placeholder {
+  color: #97bf11;
+}
+
+.signup-form ::placeholder {
+  color: #97bf11;
+}
+
+.signup-form input {
+  -webkit-appearance: none;
+  max-width: 300px;
+  width: 100%;
+  height: 40px;
+  padding-left: 10px;
+  margin-bottom: 20px;
+  font-family: 'Spartan';
+  font-size: 18px;
+  border: none;
+  border-bottom: 1px solid black;
+  outline: none;
+}
+
+.signup-form input:-webkit-autofill, .signup-form input:-webkit-autofill:hover, .signup-form input:-webkit-autofill:focus, .signup-form input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+
+.signup-form .buttons-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.signup-form button,
+.signup-form a {
+  width: 100px;
+  height: 35px;
+  padding: 3px 0 0 0;
+  margin: 5px;
+  font-family: 'Spartan';
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 14px;
+  text-transform: uppercase;
+  text-align: center;
+  border: none;
+  background-color: #97bf11;
+  color: #ffffff;
+  outline: none;
+}
+
+.signup-form button:hover,
+.signup-form a:hover {
+  cursor: pointer;
+}
+
+.signup-form a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #12bbb5;
+  text-decoration: none;
+}
+/*# sourceMappingURL=signup.css.map */

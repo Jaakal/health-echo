@@ -1,0 +1,191 @@
+@font-face {
+  font-family: 'Spartan';
+  src: url('../fonts/Spartan-SemiBold.eot');
+  src: url('../fonts/Spartan-SemiBold.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/Spartan-SemiBold.woff2') format('woff2'),
+      url('../fonts/Spartan-SemiBold.woff') format('woff'),
+      url('../fonts/Spartan-SemiBold.ttf') format('truetype'),
+      url('../fonts/Spartan-SemiBold.svg#Spartan-SemiBold') format('svg');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Spartan';
+  src: url('../fonts/Spartan-Bold.eot');
+  src: url('../fonts/Spartan-Bold.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/Spartan-Bold.woff2') format('woff2'),
+      url('../fonts/Spartan-Bold.woff') format('woff'),
+      url('../fonts/Spartan-Bold.ttf') format('truetype'),
+      url('../fonts/Spartan-Bold.svg#Spartan-Bold') format('svg');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Spartan';
+  src: url('../fonts/Spartan-Medium.eot');
+  src: url('../fonts/Spartan-Medium.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/Spartan-Medium.woff2') format('woff2'),
+      url('../fonts/Spartan-Medium.woff') format('woff'),
+      url('../fonts/Spartan-Medium.ttf') format('truetype'),
+      url('../fonts/Spartan-Medium.svg#Spartan-Medium') format('svg');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Spartan';
+  src: url('../fonts/Spartan-ExtraBold.eot');
+  src: url('../fonts/Spartan-ExtraBold.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/Spartan-ExtraBold.woff2') format('woff2'),
+      url('../fonts/Spartan-ExtraBold.woff') format('woff'),
+      url('../fonts/Spartan-ExtraBold.ttf') format('truetype'),
+      url('../fonts/Spartan-ExtraBold.svg#Spartan-ExtraBold') format('svg');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Spartan';
+  src: url('../fonts/Spartan-Regular.eot');
+  src: url('../fonts/Spartan-Regular.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/Spartan-Regular.woff2') format('woff2'),
+      url('../fonts/Spartan-Regular.woff') format('woff'),
+      url('../fonts/Spartan-Regular.ttf') format('truetype'),
+      url('../fonts/Spartan-Regular.svg#Spartan-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Spartan';
+  src: url('../fonts/Spartan-Black.eot');
+  src: url('../fonts/Spartan-Black.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/Spartan-Black.woff2') format('woff2'),
+      url('../fonts/Spartan-Black.woff') format('woff'),
+      url('../fonts/Spartan-Black.ttf') format('truetype'),
+      url('../fonts/Spartan-Black.svg#Spartan-Black') format('svg');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Spartan';
+  src: url('../fonts/Spartan-ExtraLight.eot');
+  src: url('../fonts/Spartan-ExtraLight.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/Spartan-ExtraLight.woff2') format('woff2'),
+      url('../fonts/Spartan-ExtraLight.woff') format('woff'),
+      url('../fonts/Spartan-ExtraLight.ttf') format('truetype'),
+      url('../fonts/Spartan-ExtraLight.svg#Spartan-ExtraLight') format('svg');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Spartan';
+  src: url('../fonts/Spartan-Light.eot');
+  src: url('../fonts/Spartan-Light.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/Spartan-Light.woff2') format('woff2'),
+      url('../fonts/Spartan-Light.woff') format('woff'),
+      url('../fonts/Spartan-Light.ttf') format('truetype'),
+      url('../fonts/Spartan-Light.svg#Spartan-Light') format('svg');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Spartan';
+  src: url('../fonts/Spartan-Thin.eot');
+  src: url('../fonts/Spartan-Thin.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/Spartan-Thin.woff2') format('woff2'),
+      url('../fonts/Spartan-Thin.woff') format('woff'),
+      url('../fonts/Spartan-Thin.ttf') format('truetype'),
+      url('../fonts/Spartan-Thin.svg#Spartan-Thin') format('svg');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'KoHo';
+  src: url('../fonts/KoHo-Regular.eot');
+  src: url('../fonts/KoHo-Regular.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/KoHo-Regular.woff2') format('woff2'),
+      url('../fonts/KoHo-Regular.woff') format('woff'),
+      url('../fonts/KoHo-Regular.ttf') format('truetype'),
+      url('../fonts/KoHo-Regular.svg#KoHo-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'KoHo';
+  src: url('../fonts/KoHo-Medium.eot');
+  src: url('../fonts/KoHo-Medium.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/KoHo-Medium.woff2') format('woff2'),
+      url('../fonts/KoHo-Medium.woff') format('woff'),
+      url('../fonts/KoHo-Medium.ttf') format('truetype'),
+      url('../fonts/KoHo-Medium.svg#KoHo-Medium') format('svg');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'KoHo';
+  src: url('../fonts/KoHo-Bold.eot');
+  src: url('../fonts/KoHo-Bold.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/KoHo-Bold.woff2') format('woff2'),
+      url('../fonts/KoHo-Bold.woff') format('woff'),
+      url('../fonts/KoHo-Bold.ttf') format('truetype'),
+      url('../fonts/KoHo-Bold.svg#KoHo-Bold') format('svg');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'KoHo';
+  src: url('../fonts/KoHo-Light.eot');
+  src: url('../fonts/KoHo-Light.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/KoHo-Light.woff2') format('woff2'),
+      url('../fonts/KoHo-Light.woff') format('woff'),
+      url('../fonts/KoHo-Light.ttf') format('truetype'),
+      url('../fonts/KoHo-Light.svg#KoHo-Light') format('svg');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'KoHo';
+  src: url('../fonts/KoHo-ExtraLight.eot');
+  src: url('../fonts/KoHo-ExtraLight.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/KoHo-ExtraLight.woff2') format('woff2'),
+      url('../fonts/KoHo-ExtraLight.woff') format('woff'),
+      url('../fonts/KoHo-ExtraLight.ttf') format('truetype'),
+      url('../fonts/KoHo-ExtraLight.svg#KoHo-ExtraLight') format('svg');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'KoHo';
+  src: url('../fonts/KoHo-SemiBold.eot');
+  src: url('../fonts/KoHo-SemiBold.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/KoHo-SemiBold.woff2') format('woff2'),
+      url('../fonts/KoHo-SemiBold.woff') format('woff'),
+      url('../fonts/KoHo-SemiBold.ttf') format('truetype'),
+      url('../fonts/KoHo-SemiBold.svg#KoHo-SemiBold') format('svg');
+  font-weight: 600;
+  font-style: normal;
+}
+
+body {
+  overscroll-behavior-y: none;
+  overflow-y: scroll;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+}

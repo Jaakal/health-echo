@@ -1,0 +1,19 @@
+.studio {
+  display: flex;
+  // justify-content: center;
+  position: relative;
+  width: 100%;
+  // overflow-x: hidden;
+  // overflow: hidden;
+}
+
+.app-wrapper {
+  display: flex;
+  justify-content: center;
+  max-width: 1400px;
+  width: 100%;
+}
+
+.filler {
+  flex-grow: 1;
+}

@@ -4,22 +4,20 @@ import PropTypes from 'prop-types';
 import axios from 'axios';
 import { Link, Redirect } from 'react-router-dom';
 
+import { LOGIN } from '../utilities/constants';
 import { logInUser } from '../actions/index';
 
 import '../css/login.css';
 
 const LogIn = props => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [credentials, setCredentials] = useState(LOGIN);
   const { token, logInUser } = props;
 
-  const handleChange = event => {
-    switch (event.target.id) {
+  const handleChange = ({ target: { name, value } }) => {
+    switch (name) {
       case 'email':
-        setEmail(event.target.value);
-        break;
       case 'password':
-        setPassword(event.target.value);
+        setCredentials({ ...credentials, [name]: value });
         break;
       default:
         break;
@@ -28,7 +26,7 @@ const LogIn = props => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    axios.post('user/login', { user: { email, password } })
+    axios.post('user/login', { user: credentials })
       .then(response => {
         if (response.data.loggedIn) {
           logInUser(response.data);
@@ -36,22 +34,20 @@ const LogIn = props => {
       })
       .catch(error => {});
 
-    setEmail('');
-    setPassword('');
+    setCredentials(LOGIN);
   };
 
   const logInForm = (
     <div className="login-form-wrapper">
       <form className="login-form" onSubmit={handleSubmit}>
-        <input type="email" onChange={handleChange} value={email} id="email" name="email" placeholder="Email" />
-        <input type="password" onChange={handleChange} value={password} id="password" name="password" placeholder="Password" />
+        <input type="email" onChange={handleChange} value={credentials.email} id="email" name="email" placeholder="Email" />
+        <input type="password" onChange={handleChange} value={credentials.password} id="password" name="password" placeholder="Password" />
 
         <div className="buttons-wrapper">
           <button type="submit">Login</button>
           <Link to="/signup">Sign Up</Link>
         </div>
       </form>
-
     </div>
   );
 

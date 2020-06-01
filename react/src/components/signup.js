@@ -4,52 +4,37 @@ import PropTypes from 'prop-types';
 import axios from 'axios';
 import { Link, Redirect } from 'react-router-dom';
 
+import { USER } from '../utilities/constants';
 import { logInUser } from '../actions/index';
 
 import '../css/signup.css';
 
 const SignUp = props => {
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [passwordConfirmation, setPasswordConfirmation] = useState('');
+  const [user, setUser] = useState(USER);
   const { token, logInUser } = props;
 
-  const handleChange = event => {
-    switch (event.target.id) {
-      case 'first-name':
-        setFirstName(event.target.value);
-        break;
-      case 'last-name':
-        setLastName(event.target.value);
-        break;
+  const handleChange = ({ target: { name, value } }) => {
+    switch (name) {
+      case 'firstname':
+      case 'lastname':
       case 'email':
-        setEmail(event.target.value);
-        break;
       case 'password':
-        setPassword(event.target.value);
-        break;
-      case 'password-confirmation':
-        setPasswordConfirmation(event.target.value);
+      case 'password_confirmation':
+        setUser({ ...user, [name]: value });
         break;
       default:
         break;
     }
   };
 
+  /* eslint-disable camelcase */
   const handleSubmit = event => {
     event.preventDefault();
+    const { password, password_confirmation } = user;
 
-    if (password === passwordConfirmation) {
+    if (password === password_confirmation) {
       axios.post('user/create', {
-        user: {
-          firstname: firstName,
-          lastname: lastName,
-          email,
-          password,
-          password_confirmation: passwordConfirmation,
-        },
+        user,
       })
         .then(response => {
           if (response.data.loggedIn) {
@@ -58,23 +43,21 @@ const SignUp = props => {
         })
         .catch(error => {});
 
-      setFirstName('');
-      setLastName('');
-      setEmail('');
+      setUser(USER);
     }
 
-    setPassword('');
-    setPasswordConfirmation('');
+    setUser({ ...user, password: '', password_confirmation: '' });
   };
+  /* eslint-enable camelcase */
 
   const signUpForm = (
     <div className="signup-form-wrapper">
       <form className="signup-form" onSubmit={handleSubmit}>
-        <input type="first-name" onChange={handleChange} value={firstName} id="first-name" name="first-name" required="required" maxLength="20" placeholder="First Name" />
-        <input type="last-name" onChange={handleChange} value={lastName} id="last-name" name="last-name" required="required" maxLength="30" placeholder="Last Name" />
-        <input type="email" onChange={handleChange} value={email} id="email" name="email" required="required" maxLength="255" placeholder="Email" />
-        <input type="password" onChange={handleChange} value={password} id="password" name="password" required="required" minLength="6" placeholder="Password" />
-        <input type="password" onChange={handleChange} value={passwordConfirmation} id="password-confirmation" name="password-confirmation" required="required" minLength="6" placeholder="Confirm Password" />
+        <input type="first-name" onChange={handleChange} value={user.firstName} id="first-name" name="firstname" required="required" maxLength="20" placeholder="First Name" />
+        <input type="last-name" onChange={handleChange} value={user.lastName} id="last-name" name="lastname" required="required" maxLength="30" placeholder="Last Name" />
+        <input type="email" onChange={handleChange} value={user.email} id="email" name="email" required="required" maxLength="255" placeholder="Email" />
+        <input type="password" onChange={handleChange} value={user.password} id="password" name="password" required="required" minLength="6" placeholder="Password" />
+        <input type="password" onChange={handleChange} value={user.passwordConfirmation} id="password-confirmation" name="password_confirmation" required="required" minLength="6" placeholder="Confirm Password" />
 
         <div className="buttons-wrapper">
           <button type="submit">Sign Up</button>

@@ -47,10 +47,6 @@ Studio.propTypes = {
   changeNavbarState: PropTypes.func.isRequired,
 };
 
-// const mapStateToProps = state => ({
-//   user: state.user,
-// });
-
 const mapDispatchToProps = dispatch => ({
   changeNavbarState: () => {
     dispatch(

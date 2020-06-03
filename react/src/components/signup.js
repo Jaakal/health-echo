@@ -14,17 +14,7 @@ const SignUp = props => {
   const { token, logInUser } = props;
 
   const handleChange = ({ target: { name, value } }) => {
-    switch (name) {
-      case 'firstname':
-      case 'lastname':
-      case 'email':
-      case 'password':
-      case 'password_confirmation':
-        setUser({ ...user, [name]: value });
-        break;
-      default:
-        break;
-    }
+    setUser({ ...user, [name]: value })
   };
 
   /* eslint-disable camelcase */

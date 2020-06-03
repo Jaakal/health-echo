@@ -60,6 +60,7 @@ class BodyTreatmentController < ApplicationController
       end
 
       data['services'] = services_array
+      data['services_query'] = treatments_query
       data['loggedIn'] = true
     else
       data['loggedIn'] = false

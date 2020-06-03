@@ -16,4 +16,13 @@ FactoryBot.define do
     category { 'Massage' }
     description { 'Full body massage by specialist' }
   end
+
+  factory :duration do
+  end
+
+  factory :location do
+  end
+
+  factory :appointment do
+  end
 end

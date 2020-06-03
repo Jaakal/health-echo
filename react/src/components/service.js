@@ -6,13 +6,12 @@ const Service = props => {
   const [image, setImage] = useState('');
   const { service } = props;
   const { name, category, description } = service;
-  
+
   import(`../images/${name.replace(/ /g, '-').toLowerCase()}.jpg`)
-  .then(image => {
-    setImage(image.default)
-  }
-  )
-  .catch(err => {})
+    .then(image => {
+      setImage(image.default);
+    })
+    .catch(err => {});
 
   return (
     <div className="service">

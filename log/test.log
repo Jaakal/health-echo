@@ -20608,3 +20608,501 @@ Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.9ms | Allocations: 977)
   [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
   [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
   [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (1.0ms)[0m  [1m[31mDELETE FROM "appointments";[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.6ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'appointments';[0m
+  [1m[35m (1.1ms)[0m  [1m[31mDELETE FROM "body_treatments";[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'body_treatments';[0m
+  [1m[35m (1.0ms)[0m  [1m[31mDELETE FROM "durations";[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'durations';[0m
+  [1m[35m (2.4ms)[0m  [1m[31mDELETE FROM "locations";[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'locations';[0m
+  [1m[35m (1.1ms)[0m  [1m[31mDELETE FROM "studios";[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'studios';[0m
+  [1m[35m (0.9ms)[0m  [1m[31mDELETE FROM "users";[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'users';[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "jane.doe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("firstname", "lastname", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["firstname", "Jane"], ["lastname", "Doe"], ["email", "jane.doe@gmail.com"], ["password_digest", "$2a$04$njiliII823WOPOxL/cv6le4W2wNkmimK83/iO3ZaoWv.PSAo4ZO9i"], ["created_at", "2020-06-03 18:18:05.991782"], ["updated_at", "2020-06-03 18:18:05.991782"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "jane.doe2@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("firstname", "lastname", "email", "password_digest", "created_at", "updated_at", "token") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["firstname", "Jane"], ["lastname", "Doe"], ["email", "jane.doe2@gmail.com"], ["password_digest", "$2a$04$V.t0lbp9xlrl/OyULQ1RPuD7HJOTsilTbtjzUXeSnW5B8tl26UizC"], ["created_at", "2020-06-03 18:18:05.995149"], ["updated_at", "2020-06-03 18:18:05.995149"], ["token", "1168a6d44e04e1ba1ad09ac5c0228558"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBodyTreatment Create (0.1ms)[0m  [1m[32mINSERT INTO "body_treatments" ("name", "category", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Full Body Massage"], ["category", "Massage"], ["description", "Full body massage by specialist"], ["created_at", "2020-06-03 18:18:06.003998"], ["updated_at", "2020-06-03 18:18:06.003998"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBodyTreatment Load (0.1ms)[0m  [1m[34mSELECT "body_treatments".* FROM "body_treatments" WHERE "body_treatments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDuration Create (0.2ms)[0m  [1m[32mINSERT INTO "durations" ("body_treatment_id", "duration", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["body_treatment_id", 1], ["duration", 30], ["price", 23.0], ["created_at", "2020-06-03 18:18:06.020226"], ["updated_at", "2020-06-03 18:18:06.020226"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStudio Create (0.1ms)[0m  [1m[32mINSERT INTO "studios" ("city", "address", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["city", "Seattle"], ["address", "Heaven Street 7 - 11"], ["created_at", "2020-06-03 18:18:06.028298"], ["updated_at", "2020-06-03 18:18:06.028298"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBodyTreatment Load (0.0ms)[0m  [1m[34mSELECT "body_treatments".* FROM "body_treatments" WHERE "body_treatments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudio Load (0.1ms)[0m  [1m[34mSELECT "studios".* FROM "studios" WHERE "studios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLocation Create (0.1ms)[0m  [1m[32mINSERT INTO "locations" ("body_treatment_id", "studio_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body_treatment_id", 1], ["studio_id", 1], ["created_at", "2020-06-03 18:18:06.036273"], ["updated_at", "2020-06-03 18:18:06.036273"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBodyTreatment Load (0.0ms)[0m  [1m[34mSELECT "body_treatments".* FROM "body_treatments" WHERE "body_treatments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudio Load (0.0ms)[0m  [1m[34mSELECT "studios".* FROM "studios" WHERE "studios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDuration Load (0.1ms)[0m  [1m[34mSELECT "durations".* FROM "durations" WHERE "durations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAppointment Create (0.1ms)[0m  [1m[32mINSERT INTO "appointments" ("user_id", "body_treatment_id", "studio_id", "duration_id", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["user_id", 2], ["body_treatment_id", 1], ["studio_id", 1], ["duration_id", 1], ["date", "2020-07-02"], ["created_at", "2020-06-03 18:18:06.063679"], ["updated_at", "2020-06-03 18:18:06.063679"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by AppointmentController#index as HTML
+  Parameters: {"user"=>{"token"=>"1168a6d44e04e1ba1ad09ac5c0228558"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."token" = ? LIMIT ?[0m  [["token", "1168a6d44e04e1ba1ad09ac5c0228558"], ["LIMIT", 1]]
+  [1m[36mAppointment Load (0.2ms)[0m  [1m[34mSELECT "name", "category", "description", "city", "address", "appointments"."date", "duration", "price" FROM "appointments" INNER JOIN "users" ON "users"."id" = "appointments"."user_id" INNER JOIN "body_treatments" ON "body_treatments"."id" = "appointments"."body_treatment_id" INNER JOIN "studios" ON "studios"."id" = "appointments"."studio_id" INNER JOIN "durations" ON "durations"."id" = "appointments"."duration_id" WHERE "appointments"."user_id" = ? ORDER BY "appointments"."date" ASC[0m  [["user_id", 2]]
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 2330)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Processing by AppointmentController#index as HTML
+  Parameters: {"user"=>{"token"=>""}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."token" = ? LIMIT ?[0m  [["token", ""], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 261)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Processing by AppointmentController#create as HTML
+  Parameters: {"user"=>{"address"=>"Heaven Street 7 - 11", "category"=>"Massage", "city"=>"Seattle", "date"=>"2020-07-02", "duration"=>"30", "service"=>"Full Body Massage", "token"=>"1168a6d44e04e1ba1ad09ac5c0228558"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."token" = ? LIMIT ?[0m  [["token", "1168a6d44e04e1ba1ad09ac5c0228558"], ["LIMIT", 1]]
+  [1m[36mBodyTreatment Load (0.1ms)[0m  [1m[34mSELECT "body_treatments".* FROM "body_treatments" WHERE "body_treatments"."name" = ? AND "body_treatments"."category" = ? LIMIT ?[0m  [["name", "Full Body Massage"], ["category", "Massage"], ["LIMIT", 1]]
+  [1m[36mStudio Load (0.1ms)[0m  [1m[34mSELECT "studios".* FROM "studios" WHERE "studios"."city" = ? AND "studios"."address" = ? LIMIT ?[0m  [["city", "Seattle"], ["address", "Heaven Street 7 - 11"], ["LIMIT", 1]]
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."studio_id" = ? AND "locations"."body_treatment_id" = ? LIMIT ?[0m  [["studio_id", 1], ["body_treatment_id", 1], ["LIMIT", 1]]
+  [1m[36mDuration Load (0.3ms)[0m  [1m[34mSELECT "durations".* FROM "durations" WHERE "durations"."body_treatment_id" = ? AND "durations"."duration" = ? LIMIT ?[0m  [["body_treatment_id", 1], ["duration", 30], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBodyTreatment Load (0.1ms)[0m  [1m[34mSELECT "body_treatments".* FROM "body_treatments" WHERE "body_treatments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudio Load (0.1ms)[0m  [1m[34mSELECT "studios".* FROM "studios" WHERE "studios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDuration Load (0.1ms)[0m  [1m[34mSELECT "durations".* FROM "durations" WHERE "durations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAppointment Create (0.1ms)[0m  [1m[32mINSERT INTO "appointments" ("user_id", "body_treatment_id", "studio_id", "duration_id", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["user_id", 2], ["body_treatment_id", 1], ["studio_id", 1], ["duration_id", 1], ["date", "2020-07-02"], ["created_at", "2020-06-03 18:18:06.099592"], ["updated_at", "2020-06-03 18:18:06.099592"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 1.4ms | Allocations: 2757)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Processing by AppointmentController#create as HTML
+  Parameters: {"user"=>{"address"=>"Heaven Street 7 - 11", "category"=>"Massage", "city"=>"Seattle", "date"=>"2020-07-02", "duration"=>"30", "service"=>"Full Body Massage", "token"=>""}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."token" = ? LIMIT ?[0m  [["token", ""], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 327)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "jane.doe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("firstname", "lastname", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["firstname", "Jane"], ["lastname", "Doe"], ["email", "jane.doe@gmail.com"], ["password_digest", "$2a$04$UimOgOBrsXc80a0NDGY7le.aMapxh7p8G7rrzl7abFl4NfToxL0i."], ["created_at", "2020-06-03 18:18:06.109364"], ["updated_at", "2020-06-03 18:18:06.109364"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "jane.doe2@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("firstname", "lastname", "email", "password_digest", "created_at", "updated_at", "token") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["firstname", "Jane"], ["lastname", "Doe"], ["email", "jane.doe2@gmail.com"], ["password_digest", "$2a$04$2ubRCIlEdzPuFxVLLWMlzuDZPRhKY8ySic1BXTGVPKD3t96RXcu6y"], ["created_at", "2020-06-03 18:18:06.112676"], ["updated_at", "2020-06-03 18:18:06.112676"], ["token", "073b16ea65fc40971d2cbf2857852285"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBodyTreatment Create (0.1ms)[0m  [1m[32mINSERT INTO "body_treatments" ("name", "category", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Full Body Massage"], ["category", "Massage"], ["description", "Full body massage by specialist"], ["created_at", "2020-06-03 18:18:06.113910"], ["updated_at", "2020-06-03 18:18:06.113910"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBodyTreatment Load (0.0ms)[0m  [1m[34mSELECT "body_treatments".* FROM "body_treatments" WHERE "body_treatments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDuration Create (0.1ms)[0m  [1m[32mINSERT INTO "durations" ("body_treatment_id", "duration", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["body_treatment_id", 1], ["duration", 30], ["price", 23.0], ["created_at", "2020-06-03 18:18:06.115679"], ["updated_at", "2020-06-03 18:18:06.115679"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStudio Create (0.1ms)[0m  [1m[32mINSERT INTO "studios" ("city", "address", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["city", "Seattle"], ["address", "Heaven Street 7 - 11"], ["created_at", "2020-06-03 18:18:06.116524"], ["updated_at", "2020-06-03 18:18:06.116524"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBodyTreatment Load (0.0ms)[0m  [1m[34mSELECT "body_treatments".* FROM "body_treatments" WHERE "body_treatments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudio Load (0.0ms)[0m  [1m[34mSELECT "studios".* FROM "studios" WHERE "studios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLocation Create (0.2ms)[0m  [1m[32mINSERT INTO "locations" ("body_treatment_id", "studio_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body_treatment_id", 1], ["studio_id", 1], ["created_at", "2020-06-03 18:18:06.118425"], ["updated_at", "2020-06-03 18:18:06.118425"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by BodyTreatmentController#index as HTML
+  Parameters: {"user"=>{"token"=>"073b16ea65fc40971d2cbf2857852285"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."token" = ? LIMIT ?[0m  [["token", "073b16ea65fc40971d2cbf2857852285"], ["LIMIT", 1]]
+  [1m[36mBodyTreatment Load (0.2ms)[0m  [1m[34mSELECT "body_treatments"."name", "body_treatments"."category", "body_treatments"."description", "city", "address", "duration", "price" FROM "body_treatments" INNER JOIN "locations" ON "locations"."body_treatment_id" = "body_treatments"."id" INNER JOIN "studios" ON "studios"."id" = "locations"."studio_id" INNER JOIN "durations" ON "durations"."body_treatment_id" = "body_treatments"."id" ORDER BY "body_treatments"."name" ASC, "city" ASC, "address" ASC, "duration" ASC[0m
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 1263)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Processing by BodyTreatmentController#index as HTML
+  Parameters: {"user"=>{"token"=>""}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."token" = ? LIMIT ?[0m  [["token", ""], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 261)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "jane.doe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("firstname", "lastname", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["firstname", "Jane"], ["lastname", "Doe"], ["email", "jane.doe@gmail.com"], ["password_digest", "$2a$04$q5e5IxPsdrWSqG4bhrpwQ.wkU7ExHjTXqvixwk8yw3yO3oOjSEt4a"], ["created_at", "2020-06-03 18:18:06.135106"], ["updated_at", "2020-06-03 18:18:06.135106"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "jane.doe2@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("firstname", "lastname", "email", "password_digest", "created_at", "updated_at", "token") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["firstname", "Jane"], ["lastname", "Doe"], ["email", "jane.doe2@gmail.com"], ["password_digest", "$2a$04$2x/rAPeamLLE5OYlWSJG6.AKXF38mJ9B1fiHtVINFn4zRiyP6SMWi"], ["created_at", "2020-06-03 18:18:06.139432"], ["updated_at", "2020-06-03 18:18:06.139432"], ["token", "b8597c21f64dce28c20484b125a2369d"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStudio Create (0.1ms)[0m  [1m[32mINSERT INTO "studios" ("city", "address", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["city", "Seattle"], ["address", "Heaven Street 7 - 11"], ["created_at", "2020-06-03 18:18:06.140322"], ["updated_at", "2020-06-03 18:18:06.140322"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by StudioController#index as HTML
+  Parameters: {"user"=>{"token"=>"b8597c21f64dce28c20484b125a2369d"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."token" = ? LIMIT ?[0m  [["token", "b8597c21f64dce28c20484b125a2369d"], ["LIMIT", 1]]
+  [1m[36mStudio Load (0.1ms)[0m  [1m[34mSELECT "studios".* FROM "studios"[0m
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.3ms | Allocations: 548)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Processing by StudioController#index as HTML
+  Parameters: {"user"=>{"token"=>""}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."token" = ? LIMIT ?[0m  [["token", ""], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 261)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "jane.doe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("firstname", "lastname", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["firstname", "Jane"], ["lastname", "Doe"], ["email", "jane.doe@gmail.com"], ["password_digest", "$2a$04$HHjlLNfdrN24gtqKe5uTtOe4vB13dTXUs6MybNuhYfAeB7MONmSOS"], ["created_at", "2020-06-03 18:18:06.154546"], ["updated_at", "2020-06-03 18:18:06.154546"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by UserController#create as HTML
+  Parameters: {"user"=>{"email"=>"jon.doe@gmail.com", "firstname"=>"Jon", "lastname"=>"Doe", "password"=>"[FILTERED]"}}
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "jon.doe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("firstname", "lastname", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["firstname", "Jon"], ["lastname", "Doe"], ["email", "jon.doe@gmail.com"], ["password_digest", "$2a$04$1k3KqSQeDv.ixLNztV52B.Lm2/V1KqUWh5ySlnY/WjvRLS1zWs73."], ["created_at", "2020-06-03 18:18:06.162510"], ["updated_at", "2020-06-03 18:18:06.162510"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) AND "users"."id" != ? LIMIT ?[0m  [["email", "jon.doe@gmail.com"], ["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Update (0.1ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ?, "token" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2020-06-03 18:18:06.164862"], ["token", "96874492e022af4b71c727beb87b44a4"], ["id", 2]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 1.1ms | Allocations: 1836)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+Processing by UserController#create as HTML
+  Parameters: {"user"=>{"email"=>"jon.doe@gmail.com", "firstname"=>"", "lastname"=>"Doe", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "jon.doe@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_2[0m
+Completed 200 OK in 9ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 2210)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Processing by UserController#create as HTML
+  Parameters: {"user"=>{"email"=>"jon.doe@gmail.com", "firstname"=>"", "lastname"=>"Doe", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "jon.doe@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_2[0m
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 1124)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Processing by UserController#login as HTML
+  Parameters: {"user"=>{"email"=>"jane.doe@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jane.doe@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) AND "users"."id" != ? LIMIT ?[0m  [["email", "jane.doe@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Update (0.1ms)[0m  [1m[33mUPDATE "users" SET "token" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["token", "87fa4e8210b4ce03602c8215b68698db"], ["updated_at", "2020-06-03 18:18:06.198575"], ["id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.6ms | Allocations: 1312)
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Processing by UserController#login as HTML
+  Parameters: {"user"=>{"email"=>"jane.do@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jane.do@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 273)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Processing by UserController#login as HTML
+  Parameters: {"user"=>{"email"=>"jane.doe@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jane.doe@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) AND "users"."id" != ? LIMIT ?[0m  [["email", "jane.doe@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "token" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["token", "7f02f14d592926c4ded20b511e97086a"], ["updated_at", "2020-06-03 18:18:06.212175"], ["id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+Completed 200 OK in 6ms (Views: 0.5ms | ActiveRecord: 0.9ms | Allocations: 1140)
+Processing by UserController#logout as HTML
+  Parameters: {"user"=>{"token"=>"7f02f14d592926c4ded20b511e97086a"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."token" = ? LIMIT ?[0m  [["token", "7f02f14d592926c4ded20b511e97086a"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) AND "users"."id" != ? LIMIT ?[0m  [["email", "jane.doe@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Update (0.1ms)[0m  [1m[33mUPDATE "users" SET "token" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["token", nil], ["updated_at", "2020-06-03 18:18:06.217985"], ["id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 1.4ms | Allocations: 977)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "jane.doe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("firstname", "lastname", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["firstname", "Jane"], ["lastname", "Doe"], ["email", "jane.doe@gmail.com"], ["password_digest", "$2a$04$ROcDR4Ee0krsx4.9QHE8BOkdC2FMf7edh.SClyRMKbKstVgzO7ODS"], ["created_at", "2020-06-03 18:18:06.223457"], ["updated_at", "2020-06-03 18:18:06.223457"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStudio Create (0.2ms)[0m  [1m[32mINSERT INTO "studios" ("city", "address", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["city", "Seattle"], ["address", "Heaven Street 7 - 11"], ["created_at", "2020-06-03 18:18:06.224813"], ["updated_at", "2020-06-03 18:18:06.224813"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBodyTreatment Create (0.2ms)[0m  [1m[32mINSERT INTO "body_treatments" ("name", "category", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Full Body Massage"], ["category", "Massage"], ["description", "Full body massage by specialist"], ["created_at", "2020-06-03 18:18:06.226353"], ["updated_at", "2020-06-03 18:18:06.226353"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBodyTreatment Load (0.1ms)[0m  [1m[34mSELECT "body_treatments".* FROM "body_treatments" WHERE "body_treatments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDuration Create (0.2ms)[0m  [1m[32mINSERT INTO "durations" ("body_treatment_id", "duration", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["body_treatment_id", 1], ["duration", 45], ["price", 25.25], ["created_at", "2020-06-03 18:18:06.228814"], ["updated_at", "2020-06-03 18:18:06.228814"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "appointments"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBodyTreatment Load (0.1ms)[0m  [1m[34mSELECT "body_treatments".* FROM "body_treatments" WHERE "body_treatments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudio Load (0.0ms)[0m  [1m[34mSELECT "studios".* FROM "studios" WHERE "studios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDuration Load (0.1ms)[0m  [1m[34mSELECT "durations".* FROM "durations" WHERE "durations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAppointment Create (0.1ms)[0m  [1m[32mINSERT INTO "appointments" ("user_id", "body_treatment_id", "studio_id", "duration_id", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["user_id", 1], ["body_treatment_id", 1], ["studio_id", 1], ["duration_id", 1], ["date", "2020-07-02"], ["created_at", "2020-06-03 18:18:06.235306"], ["updated_at", "2020-06-03 18:18:06.235306"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "appointments"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "appointments"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBodyTreatment Load (0.0ms)[0m  [1m[34mSELECT "body_treatments".* FROM "body_treatments" WHERE "body_treatments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudio Load (0.0ms)[0m  [1m[34mSELECT "studios".* FROM "studios" WHERE "studios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDuration Load (0.1ms)[0m  [1m[34mSELECT "durations".* FROM "durations" WHERE "durations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "appointments"[0m
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "appointments"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBodyTreatment Load (0.1ms)[0m  [1m[34mSELECT "body_treatments".* FROM "body_treatments" WHERE "body_treatments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudio Load (0.1ms)[0m  [1m[34mSELECT "studios".* FROM "studios" WHERE "studios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDuration Load (0.1ms)[0m  [1m[34mSELECT "durations".* FROM "durations" WHERE "durations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "appointments"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "appointments"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBodyTreatment Load (0.1ms)[0m  [1m[34mSELECT "body_treatments".* FROM "body_treatments" WHERE "body_treatments"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStudio Load (0.1ms)[0m  [1m[34mSELECT "studios".* FROM "studios" WHERE "studios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDuration Load (0.1ms)[0m  [1m[34mSELECT "durations".* FROM "durations" WHERE "durations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "appointments"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "appointments"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBodyTreatment Load (0.1ms)[0m  [1m[34mSELECT "body_treatments".* FROM "body_treatments" WHERE "body_treatments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudio Load (0.1ms)[0m  [1m[34mSELECT "studios".* FROM "studios" WHERE "studios"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mDuration Load (0.0ms)[0m  [1m[34mSELECT "durations".* FROM "durations" WHERE "durations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "appointments"[0m
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "appointments"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBodyTreatment Load (0.1ms)[0m  [1m[34mSELECT "body_treatments".* FROM "body_treatments" WHERE "body_treatments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudio Load (0.0ms)[0m  [1m[34mSELECT "studios".* FROM "studios" WHERE "studios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDuration Load (0.0ms)[0m  [1m[34mSELECT "durations".* FROM "durations" WHERE "durations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "appointments"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "body_treatments"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBodyTreatment Create (0.3ms)[0m  [1m[32mINSERT INTO "body_treatments" ("name", "category", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Treatment name"], ["category", "Treatment category"], ["description", "Treatment descrption"], ["created_at", "2020-06-03 18:18:06.282826"], ["updated_at", "2020-06-03 18:18:06.282826"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "body_treatments"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "body_treatments"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "body_treatments"[0m
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "body_treatments"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "body_treatments"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "body_treatments"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "body_treatments"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBodyTreatment Create (0.3ms)[0m  [1m[32mINSERT INTO "body_treatments" ("name", "category", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Full Body Massage"], ["category", "Massage"], ["description", "Full body massage by specialist"], ["created_at", "2020-06-03 18:18:06.303933"], ["updated_at", "2020-06-03 18:18:06.303933"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "durations"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBodyTreatment Load (0.1ms)[0m  [1m[34mSELECT "body_treatments".* FROM "body_treatments" WHERE "body_treatments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDuration Create (0.1ms)[0m  [1m[32mINSERT INTO "durations" ("body_treatment_id", "duration", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["body_treatment_id", 1], ["duration", 45], ["price", 25.25], ["created_at", "2020-06-03 18:18:06.307728"], ["updated_at", "2020-06-03 18:18:06.307728"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "durations"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBodyTreatment Create (0.3ms)[0m  [1m[32mINSERT INTO "body_treatments" ("name", "category", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Full Body Massage"], ["category", "Massage"], ["description", "Full body massage by specialist"], ["created_at", "2020-06-03 18:18:06.311802"], ["updated_at", "2020-06-03 18:18:06.311802"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "durations"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBodyTreatment Load (0.1ms)[0m  [1m[34mSELECT "body_treatments".* FROM "body_treatments" WHERE "body_treatments"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_2[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "durations"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBodyTreatment Create (0.1ms)[0m  [1m[32mINSERT INTO "body_treatments" ("name", "category", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Full Body Massage"], ["category", "Massage"], ["description", "Full body massage by specialist"], ["created_at", "2020-06-03 18:18:06.340875"], ["updated_at", "2020-06-03 18:18:06.340875"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "durations"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBodyTreatment Load (0.0ms)[0m  [1m[34mSELECT "body_treatments".* FROM "body_treatments" WHERE "body_treatments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "durations"[0m
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBodyTreatment Create (0.2ms)[0m  [1m[32mINSERT INTO "body_treatments" ("name", "category", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Full Body Massage"], ["category", "Massage"], ["description", "Full body massage by specialist"], ["created_at", "2020-06-03 18:18:06.348143"], ["updated_at", "2020-06-03 18:18:06.348143"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "durations"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBodyTreatment Load (0.1ms)[0m  [1m[34mSELECT "body_treatments".* FROM "body_treatments" WHERE "body_treatments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "durations"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.8ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mStudio Create (0.4ms)[0m  [1m[32mINSERT INTO "studios" ("city", "address", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["city", "Seattle"], ["address", "Heaven Street 7 - 11"], ["created_at", "2020-06-03 18:18:06.358539"], ["updated_at", "2020-06-03 18:18:06.358539"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBodyTreatment Create (0.2ms)[0m  [1m[32mINSERT INTO "body_treatments" ("name", "category", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Full Body Massage"], ["category", "Massage"], ["description", "Full body massage by specialist"], ["created_at", "2020-06-03 18:18:06.360657"], ["updated_at", "2020-06-03 18:18:06.360657"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "locations"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBodyTreatment Load (0.2ms)[0m  [1m[34mSELECT "body_treatments".* FROM "body_treatments" WHERE "body_treatments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudio Load (0.1ms)[0m  [1m[34mSELECT "studios".* FROM "studios" WHERE "studios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLocation Create (0.2ms)[0m  [1m[32mINSERT INTO "locations" ("body_treatment_id", "studio_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body_treatment_id", 1], ["studio_id", 1], ["created_at", "2020-06-03 18:18:06.364295"], ["updated_at", "2020-06-03 18:18:06.364295"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "locations"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mStudio Create (0.1ms)[0m  [1m[32mINSERT INTO "studios" ("city", "address", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["city", "Seattle"], ["address", "Heaven Street 7 - 11"], ["created_at", "2020-06-03 18:18:06.370277"], ["updated_at", "2020-06-03 18:18:06.370277"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBodyTreatment Create (0.1ms)[0m  [1m[32mINSERT INTO "body_treatments" ("name", "category", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Full Body Massage"], ["category", "Massage"], ["description", "Full body massage by specialist"], ["created_at", "2020-06-03 18:18:06.372179"], ["updated_at", "2020-06-03 18:18:06.372179"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "locations"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBodyTreatment Load (0.0ms)[0m  [1m[34mSELECT "body_treatments".* FROM "body_treatments" WHERE "body_treatments"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStudio Load (0.1ms)[0m  [1m[34mSELECT "studios".* FROM "studios" WHERE "studios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "locations"[0m
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mStudio Create (0.1ms)[0m  [1m[32mINSERT INTO "studios" ("city", "address", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["city", "Seattle"], ["address", "Heaven Street 7 - 11"], ["created_at", "2020-06-03 18:18:06.378369"], ["updated_at", "2020-06-03 18:18:06.378369"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBodyTreatment Create (0.1ms)[0m  [1m[32mINSERT INTO "body_treatments" ("name", "category", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Full Body Massage"], ["category", "Massage"], ["description", "Full body massage by specialist"], ["created_at", "2020-06-03 18:18:06.379854"], ["updated_at", "2020-06-03 18:18:06.379854"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "locations"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBodyTreatment Load (0.1ms)[0m  [1m[34mSELECT "body_treatments".* FROM "body_treatments" WHERE "body_treatments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudio Load (0.1ms)[0m  [1m[34mSELECT "studios".* FROM "studios" WHERE "studios"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "locations"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "studios"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mStudio Create (0.7ms)[0m  [1m[32mINSERT INTO "studios" ("city", "address", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["city", "Seattle"], ["address", "Studio1"], ["created_at", "2020-06-03 18:18:06.389203"], ["updated_at", "2020-06-03 18:18:06.389203"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "studios"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "studios"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "studios"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "studios"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "studios"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "studios"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "studios"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "studios"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "studios"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "jon.doe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("firstname", "lastname", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["firstname", "Jon"], ["lastname", "Doe"], ["email", "jon.doe@gmail.com"], ["password_digest", "$2a$04$MDPV2w3can6Udn/7dPSiBeI6cEACP6pF.75mdpZDm3Lpky2ksn7v."], ["created_at", "2020-06-03 18:18:06.422788"], ["updated_at", "2020-06-03 18:18:06.422788"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "jon.doe@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "jon.doe@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "jon.doe@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "jon.doe@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "jon.doe@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "jane.doe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("firstname", "lastname", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["firstname", "Jane"], ["lastname", "Doe"], ["email", "jane.doe@gmail.com"], ["password_digest", "$2a$04$mKSHLPlRHuGdk6F.osX83Ovfm2Qyu8XaiYsMf5zq0KFtzIR1O8DYy"], ["created_at", "2020-06-03 18:18:06.467219"], ["updated_at", "2020-06-03 18:18:06.467219"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "jane.doe@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m

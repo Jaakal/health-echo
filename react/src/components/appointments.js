@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import axios from 'axios';
 
 import { setAppointmentsToActiveComponent, logOutUser } from '../actions/index';
+import { getAllTheAppointments } from '../utilities/api-calls';
 
 import '../css/appointments.css';
 
@@ -11,16 +12,8 @@ const Appointments = props => {
   const [appointments, setAppointments] = useState([]);
   const { token, setAppointmentsToActiveComponent } = props;
 
-  const getAppointments = () => {
-    axios.post('appointment/index', { user: { token } })
-      .then(response => {
-        if (response.data.loggedIn) {
-          setAppointments(response.data.appointments);
-        } else {
-          logOutUser();
-        }
-      })
-      .catch(error => {});
+  const getAppointments = async () => {
+    setAppointments(await getAllTheAppointments(token));
   };
 
   useEffect(() => {

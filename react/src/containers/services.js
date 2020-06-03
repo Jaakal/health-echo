@@ -8,6 +8,7 @@ import $ from 'jquery';
 import Service from '../components/service';
 
 import { setUserApiBaseURL, setServicesToActiveComponent, logOutUser } from '../actions/index';
+import { getAllServices, insertAppointmentToDatabase } from '../utilities/api-calls';
 
 import '../css/services.css';
 
@@ -35,9 +36,7 @@ const Services = props => {
   const [locationKeys, setLocationKeys] = useState([]);
   const history = useHistory();
 
-  const getServices = () => {
-    axios.defaults.baseURL = url;
-
+  const getServices = async () => {
     if (url !== '' && window.location.href !== url) {
       const activeServiceArray = window.location.href.replace(url, '').split('/');
       setActiveService({
@@ -47,41 +46,19 @@ const Services = props => {
       });
     }
 
-    axios.post('body_treatment/index', { user: { token } })
-      .then(response => {
-        if (response.data.loggedIn) {
-          setServices(response.data.services);
-        } else {
-          logOutUser();
-        }
-      })
-      .catch(error => {});
+    setServices(await getAllServices(url, token));
   };
 
-  const setAppointment = () => {
-    axios.defaults.baseURL = url;
-
-    axios.post('appointment/create', {
-      user: {
-        token,
-        city,
-        address,
-        date,
-        duration,
-        category: services[activeServiceIndex].category,
-        service: services[activeServiceIndex].name,
-      },
-    })
-      .then(response => {
-        if (response.data.loggedIn) {
-          if (response.data.appointmentSet) {
-            setBookingDone(true);
-          }
-        } else {
-          logOutUser();
-        }
-      })
-      .catch(error => {});
+  const setAppointment = async () => {
+    setBookingDone(await insertAppointmentToDatabase(url, {
+      token,
+      city,
+      address,
+      date,
+      duration,
+      category: services[activeServiceIndex].category,
+      service: services[activeServiceIndex].name,
+    }));
   };
 
   const resizeWindow = () => {
@@ -228,8 +205,9 @@ const Services = props => {
       }
       window.removeEventListener('resize', resizeWindow);
     });
-  }, [services, duration, url, activeService.active, activeService.category, activeService.name,
-    history, checkboxIndex, city, address, setUserApiBaseURL, locationKeys, activeServiceIndex]);
+  }, [services, duration, url, activeService.active, activeService.category,
+    activeService.name, history, checkboxIndex, city, address, setUserApiBaseURL,
+    locationKeys, activeServiceIndex, bookingDone]);
 
   let keyIndex = 0;
 

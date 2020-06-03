@@ -14,7 +14,7 @@ const SignUp = props => {
   const { token, logInUser } = props;
 
   const handleChange = ({ target: { name, value } }) => {
-    setUser({ ...user, [name]: value })
+    setUser({ ...user, [name]: value });
   };
 
   /* eslint-disable camelcase */

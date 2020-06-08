@@ -1,0 +1,24 @@
+{
+  "name": "health-echo",
+  "version": "1.0.0",
+  "description": "This README would normally document whatever steps are necessary to get the application up and running.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "rspec && npm run-script test --prefix react",
+    "install": "npm install --prefix react",
+    "start": "heroku local -f Procfile.dev",
+    "build": "npm install --prefix react && npm run-script build --prefix react",
+    "deploy": "cp -a react/build/. public/",
+    "heroku-postbuild": "npm run-script build && npm run-script deploy"
+  },
+  "engines": {
+    "npm": "6.14.4",
+    "node": "14.0.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

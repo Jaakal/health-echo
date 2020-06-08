@@ -1,0 +1,116 @@
+.navbar {
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 206px;
+  height: 100vh;
+  padding: 10px 0 10px 10px;
+  margin-left: -227px;
+  border-right: 1px solid grey;
+  background-color: #ffffff;
+  z-index: 9998;
+  transform: translateX(-227px);
+  transition: transform 0.5s ease 0s;
+  will-change: transform;
+
+  .user-name {
+    padding: 50px 10px 0 0;
+    font-family: 'Spartan';
+    font-size: 20px;
+    line-height: 32px;
+    text-align: right;
+    text-transform: uppercase;
+  }
+
+  .navbar-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+
+    button {
+      align-self: flex-end;
+      width: 90%;
+      height: 40px;
+      padding: 3px 0 0 15px;
+      font-family: 'Spartan';
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 14px;
+      text-transform: uppercase;
+      text-align: left;
+      border: none;
+      outline: none;
+      background-color: #ffffff;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    button.active {
+      color: #ffffff;
+      background-color: #97bf11;
+    }
+  }
+}
+
+.animate-in {
+  transform: translateX(0);
+}
+
+.navbar-opener {
+  position: sticky;
+  width: 21px;
+  height: 12px;
+  top: 0;
+  left: 0;
+  outline: none;
+  transform: translate(10px, 20px);
+  z-index: 9999;
+  transition: transform 0.5s ease 0s;
+  will-change: transform;
+  
+  div:nth-of-type(1) {
+    position: absolute;
+    top: 0;
+    width: 20px;
+    height: 4px;
+    border-radius: 2px;
+    background-color: black;
+    pointer-events: none;
+    transition: transform 0.5s ease 0s;
+    will-change: transform;
+  }
+  
+  div:nth-of-type(2) {
+    position: absolute;
+    bottom: 0;
+    width: 20px;
+    height: 4px;
+    border-radius: 2px;
+    background-color: black;
+    pointer-events: none;
+    transition: transform 0.5s ease 0s;
+    will-change: transform;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.navbar-open {
+  transform: translate(160px, 20px);
+
+  div:nth-of-type(1) {
+    transform: translateY(4px) rotate(45deg);
+  }
+  
+  div:nth-of-type(2) {
+    transform: translateY(-4px) rotate(-45deg);
+  }
+}

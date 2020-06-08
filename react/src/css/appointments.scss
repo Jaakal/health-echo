@@ -1,0 +1,44 @@
+.appointments-wrapper {
+  width: 100%;
+}
+
+.appointment {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  margin: 15px 25px;
+  font-family: 'Spartan';
+  font-size: 14px;
+  text-decoration: none;
+  border-radius: 5px;
+  border: 2px solid #97bf11;
+  color: #000000;
+
+  .appointment-name {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+
+  .appointment-category {
+    margin-left: 15px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  .appointment-description {
+    margin-bottom: 10px;
+    line-height: 18px;
+    font-size: 15px;
+  }
+
+  .booking-info {
+    line-height: 20px;
+  }
+
+  .booking-info-label {
+    font-weight: 600;
+    color: #12bbb5;
+  }
+}

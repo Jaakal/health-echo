@@ -1,0 +1,152 @@
+.navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 206px;
+  height: 100vh;
+  padding: 10px 0 10px 10px;
+  margin-left: -227px;
+  border-right: 1px solid grey;
+  background-color: #ffffff;
+  z-index: 9998;
+  -webkit-transform: translateX(-227px);
+          transform: translateX(-227px);
+  -webkit-transition: -webkit-transform 0.5s ease 0s;
+  transition: -webkit-transform 0.5s ease 0s;
+  transition: transform 0.5s ease 0s;
+  transition: transform 0.5s ease 0s, -webkit-transform 0.5s ease 0s;
+  will-change: transform;
+}
+
+.navbar .user-name {
+  padding: 50px 10px 0 0;
+  font-family: 'Spartan';
+  font-size: 20px;
+  line-height: 32px;
+  text-align: right;
+  text-transform: uppercase;
+}
+
+.navbar .navbar-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 40px;
+}
+
+.navbar .navbar-buttons button {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  width: 90%;
+  height: 40px;
+  padding: 3px 0 0 15px;
+  font-family: 'Spartan';
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 14px;
+  text-transform: uppercase;
+  text-align: left;
+  border: none;
+  outline: none;
+  background-color: #ffffff;
+}
+
+.navbar .navbar-buttons button:hover {
+  cursor: pointer;
+}
+
+.navbar .navbar-buttons button.active {
+  color: #ffffff;
+  background-color: #97bf11;
+}
+
+.animate-in {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+.navbar-opener {
+  position: -webkit-sticky;
+  position: sticky;
+  width: 21px;
+  height: 12px;
+  top: 0;
+  left: 0;
+  outline: none;
+  -webkit-transform: translate(10px, 20px);
+          transform: translate(10px, 20px);
+  z-index: 9999;
+  -webkit-transition: -webkit-transform 0.5s ease 0s;
+  transition: -webkit-transform 0.5s ease 0s;
+  transition: transform 0.5s ease 0s;
+  transition: transform 0.5s ease 0s, -webkit-transform 0.5s ease 0s;
+  will-change: transform;
+}
+
+.navbar-opener div:nth-of-type(1) {
+  position: absolute;
+  top: 0;
+  width: 20px;
+  height: 4px;
+  border-radius: 2px;
+  background-color: black;
+  pointer-events: none;
+  -webkit-transition: -webkit-transform 0.5s ease 0s;
+  transition: -webkit-transform 0.5s ease 0s;
+  transition: transform 0.5s ease 0s;
+  transition: transform 0.5s ease 0s, -webkit-transform 0.5s ease 0s;
+  will-change: transform;
+}
+
+.navbar-opener div:nth-of-type(2) {
+  position: absolute;
+  bottom: 0;
+  width: 20px;
+  height: 4px;
+  border-radius: 2px;
+  background-color: black;
+  pointer-events: none;
+  -webkit-transition: -webkit-transform 0.5s ease 0s;
+  transition: -webkit-transform 0.5s ease 0s;
+  transition: transform 0.5s ease 0s;
+  transition: transform 0.5s ease 0s, -webkit-transform 0.5s ease 0s;
+  will-change: transform;
+}
+
+.navbar-opener:hover {
+  cursor: pointer;
+}
+
+.navbar-open {
+  -webkit-transform: translate(160px, 20px);
+          transform: translate(160px, 20px);
+}
+
+.navbar-open div:nth-of-type(1) {
+  -webkit-transform: translateY(4px) rotate(45deg);
+          transform: translateY(4px) rotate(45deg);
+}
+
+.navbar-open div:nth-of-type(2) {
+  -webkit-transform: translateY(-4px) rotate(-45deg);
+          transform: translateY(-4px) rotate(-45deg);
+}
+/*# sourceMappingURL=navbar.css.map */

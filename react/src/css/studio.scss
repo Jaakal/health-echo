@@ -1,0 +1,16 @@
+.studio {
+  display: flex;
+  position: relative;
+  width: 100%;
+}
+
+.app-wrapper {
+  display: flex;
+  justify-content: center;
+  max-width: 1400px;
+  width: 100%;
+}
+
+.filler {
+  flex-grow: 1;
+}

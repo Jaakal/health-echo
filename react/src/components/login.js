@@ -14,14 +14,7 @@ const LogIn = props => {
   const { token, logInUser } = props;
 
   const handleChange = ({ target: { name, value } }) => {
-    switch (name) {
-      case 'email':
-      case 'password':
-        setCredentials({ ...credentials, [name]: value });
-        break;
-      default:
-        break;
-    }
+    setCredentials({ ...credentials, [name]: value });
   };
 
   const handleSubmit = event => {
